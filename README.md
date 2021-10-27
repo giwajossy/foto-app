@@ -5,11 +5,11 @@ Foto App lets you apply a range of transformation effects to your picture, chang
 ---
 
 **Demo** 👇🏼
-![Foto App Homepage](https://res.cloudinary.com/dd3hmuucq/image/upload/v1635282434/foto%20App%20Shots/foto_preview0_igldm4.jpg)
+![Foto App Homepage](https://res.cloudinary.com/dd3hmuucq/image/upload/v1635354772/foto%20App%20Shots/foto_app__ptshi5.jpg)
 
 
-**After applying the "artistic filter", and adjusting the corner radius, and rotation angle** 👇🏼
-![After Preview](https://res.cloudinary.com/dd3hmuucq/image/upload/v1635282435/foto%20App%20Shots/foto_preview1_rgmbtd.jpg)
+**After applying the "Vignette" effect, and adjusting the rotation angle** 👇🏼
+![After Preview](https://res.cloudinary.com/dd3hmuucq/image/upload/v1635354772/foto%20App%20Shots/foto_app___qs35fx.jpg)
 
 ---
 
@@ -57,6 +57,7 @@ npm run server
 ```
 
 ---
+**Watch Demo**
 
 ![Foto App Demo](https://github.com/giwajossy/foto/blob/master/FotoAppDemo.gif)
 
