@@ -1,0 +1,93 @@
+<%- include("partials/header.ejs") %>     
+
+    <div class="container">
+        <div class="row justify-content-md-center">
+            
+            <div class="col-md-6">
+                <h1 class="text-left">Apply Effects </h1><hr>
+                <div class="input-group mb-3">
+                    <form action="/transformation/<%= publicId %>" method="post">
+                        
+                        <label for="" id="main"><span class="fa fa-bookmark"></span>&nbsp;&nbsp; Look and feel</label><br><br>
+                        <select class="form-select" aria-label="Default select example" name="effect">
+                            <option selected disabled>No effect</option>
+                            <!-- <option value="e_anti_removal">Anti Removal</option> -->
+                            <option value="e_art:incognito">Artistic Filter</option>
+                            <option value="e_assist_colorblind">Assist Colorblind</option>
+                            <option value="e_cartoonify">Cartoonify</option>
+                            <option value="e_blur:100">Blur</option>
+                            <option value="e_grayscale">Grayscale</option>
+                            <option value="e_hue">Hue</option>
+                            <option value="e_morphology">Morphology</option>
+                            <option value="e_negate">Negate</option>
+                            <option value="e_oil_paint:30">Oil paint</option>
+                            <option value="e_outline">Outline</option>
+                            <option value="e_pixelate">Pixelate</option>
+                            <option value="e_sepia">Sepia</option>
+                            <option value="e_sharpen:100">Sharpen</option>
+                            <option value="e_tint">Tint</option>
+                            <option value="e_vectorize">Vectorize</option>
+                            <option value="e_vignette">Vignette</option>                            
+                        </select><hr>
+
+                        <label for="" id="main"><span class="fa fa-bookmark"></span>&nbsp;&nbsp; Format</label><br><br>
+
+                        
+                        <select class="form-select" aria-label="Default select example" name="format">
+                            <option selected disabled>Keep format</option>
+                            <option value="jpg">JPG</option>
+                            <option value="png">PNG</option>
+                            <!-- <option value="gif">GIF</option> -->
+                            <option value="bmp">BMP</option>
+                        </select><br>
+
+                        <div class="input-group mb-3">
+                        <label for="customRange2" id="main" class="form-label"><span class="fa fa-bookmark"></span>&nbsp;&nbsp; Quality, corner radius, Rotation angle</label>
+                        <input type="range" class="form-range" min="0" max="100" value="0" id="customRangeQuality" name="quality">
+                        <span class="input-group-text" id="qualityValue">Quality</span><br>
+
+                        
+                        <input type="range" class="form-range" min="0" max="100" value="0"  id="customRangeRadius" name="cornerRadius">
+                        <span class="input-group-text" id="cornerRadiusValue">Corner Radius</span><br>
+
+                        
+                        <input type="range" class="form-range" min="0" max="360" value="0"  id="customRangeAngle" name="rotationAngle">
+                        <span class="input-group-text" id="rotationAngleValue">Rotation Angle</span><br>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn" name="previewBtn" value="<%= publicId %>" id="submitButton">preview</button> 
+                    </form>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <h1 class="text-left">Preview <span class="fa fa-eye"></span></h1>
+                <img src="<%= defaultAvatar %>" class="img img-responsive"><br><br>
+
+                <div class="share-btn" data-url="<%= defaultAvatar %>" data-title="..." data-desc="...">
+                    <a class="btn-whatsapp" data-id="wa"><i class="fab fa-whatsapp"></i> </a>
+                    <a class="btn-facebook" data-id="fb"><i class="fab fa-facebook-square"></i> </a>
+                    <a class="btn-twitter" data-id="tw"><i class="fab fa-twitter"></i> </a>
+                    <a class="btn-telegram" data-id="tg"><i class="fab fa-telegram"></i> </a>
+                    <a class="btn-mail" data-id="mail"><i class="fas fa-at"></i> </a>
+                </div> <!-- WhatsApp |Facebook |Twitter |Telegram | EMail [coulde each be included before the closing a tag]-->
+                
+                <% console.log(typeof(appliedEffects)) %>
+                <p id="appliedEffect">
+                    <% appliedEffects.forEach((item) => { %>
+                        
+                        <span class="badge rounded-pill bg-light text-dark">
+                            <span class="fa fa-tag"></span>&nbsp;
+                            <%= item %>
+                        </span>
+                    <% }) %>
+                </p>
+                
+                <!-- Download Button -->
+                <a class="btn btn-primary" href="<%= defaultAvatar %>" download="image" target="_blank"><i class="fa fa-download"></i> Download</a>
+            </div>
+            
+        </div>
+    </div>
+
+<%- include("partials/footer.ejs") %>

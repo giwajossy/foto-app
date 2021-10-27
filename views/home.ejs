@@ -1,0 +1,20 @@
+<%- include("partials/header.ejs") %>     
+
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-4">
+                <h1 class="text-center">Foto App</h1>
+                <img src="<%= defaultAvatar %>" class="img img-responsive"><hr>
+                
+                <div class="input-group mb-3">
+                    <form action="/" method="post" enctype="multipart/form-data">
+                        <input type="file" class="form-control" name="image" id="inputGroupFile02" required>
+                        <button type="submit" class="btn btn-primary btn" name="button" value="homeButton" id="submitButton"> Upload</button> 
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<%- include("partials/footer.ejs") %>
