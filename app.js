@@ -30,6 +30,6 @@ app.use("/", rootRoute)
 
 
 
-app.listen(3000, () => console.log("server running"))
+app.listen(process.env.PORT || 3000, () => console.log("server running"))
 
 
