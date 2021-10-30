@@ -4,7 +4,7 @@
   "description": "manipulate your photos",
   "main": "app.js",
   "scripts": {
-    "server": "nodemon app"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Giwa Jossy",
   "license": "ISC",
