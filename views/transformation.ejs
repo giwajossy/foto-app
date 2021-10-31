@@ -1,10 +1,41 @@
 <%- include("partials/header.ejs") %>     
 
     <div class="container">
-        <div class="row justify-content-md-center">
+        <div class="row justify-content-md-center flex-sm-row-reverse">
             
+            
+            
+            <div class="col-md-4">
+                <h1 class="text-left">Preview <span class="fa fa-eye"></span></h1>
+                <img src="<%= defaultAvatar %>" class="img img-responsive"><br><br>
+
+                <div class="share-btn" data-url="<%= defaultAvatar %>" data-title="..." data-desc="...">
+                    <a class="btn-whatsapp" data-id="wa"><i class="fab fa-whatsapp"></i> </a>
+                    <a class="btn-facebook" data-id="fb"><i class="fab fa-facebook-square"></i> </a>
+                    <a class="btn-twitter" data-id="tw"><i class="fab fa-twitter"></i> </a>
+                    <a class="btn-telegram" data-id="tg"><i class="fab fa-telegram"></i> </a>
+                    <a class="btn-mail" data-id="mail"><i class="fas fa-at"></i> </a>
+                </div> <!-- WhatsApp |Facebook |Twitter |Telegram | EMail [coulde each be included before the closing a tag]-->
+                
+                <% console.log(typeof(appliedEffects)) %>
+                <p id="appliedEffect">
+                    <% appliedEffects.forEach((item) => { %>
+                        
+                        <span class="badge rounded-pill bg-light text-dark">
+                            <span class="fa fa-tag"></span>&nbsp;
+                            <%= item %>
+                        </span>
+                    <% }) %>
+                </p>
+                
+                <!-- Download Button -->
+                <a class="btn btn-primary" href="<%= defaultAvatar %>" download="image" target="_blank"><i class="fa fa-download"></i> Download</a>
+            </div>
+
+
+
             <div class="col-md-6">
-                <h1 class="text-left">Apply Effects </h1><hr>
+                <h1 class="text-left" id="applyEffect">Apply Effects </h1><hr>
                 <div class="input-group mb-3">
                     <form action="/transformation/<%= publicId %>" method="post">
                         
@@ -58,33 +89,6 @@
                         <button type="submit" class="btn btn-primary btn" name="previewBtn" value="<%= publicId %>" id="submitButton">preview</button> 
                     </form>
                 </div>
-            </div>
-            
-            <div class="col-md-4">
-                <h1 class="text-left">Preview <span class="fa fa-eye"></span></h1>
-                <img src="<%= defaultAvatar %>" class="img img-responsive"><br><br>
-
-                <div class="share-btn" data-url="<%= defaultAvatar %>" data-title="..." data-desc="...">
-                    <a class="btn-whatsapp" data-id="wa"><i class="fab fa-whatsapp"></i> </a>
-                    <a class="btn-facebook" data-id="fb"><i class="fab fa-facebook-square"></i> </a>
-                    <a class="btn-twitter" data-id="tw"><i class="fab fa-twitter"></i> </a>
-                    <a class="btn-telegram" data-id="tg"><i class="fab fa-telegram"></i> </a>
-                    <a class="btn-mail" data-id="mail"><i class="fas fa-at"></i> </a>
-                </div> <!-- WhatsApp |Facebook |Twitter |Telegram | EMail [coulde each be included before the closing a tag]-->
-                
-                <% console.log(typeof(appliedEffects)) %>
-                <p id="appliedEffect">
-                    <% appliedEffects.forEach((item) => { %>
-                        
-                        <span class="badge rounded-pill bg-light text-dark">
-                            <span class="fa fa-tag"></span>&nbsp;
-                            <%= item %>
-                        </span>
-                    <% }) %>
-                </p>
-                
-                <!-- Download Button -->
-                <a class="btn btn-primary" href="<%= defaultAvatar %>" download="image" target="_blank"><i class="fa fa-download"></i> Download</a>
             </div>
             
         </div>

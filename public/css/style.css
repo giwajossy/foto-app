@@ -7,6 +7,8 @@ body {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='2440' height='1000' preserveAspectRatio='none' viewBox='0 0 2440 1000'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1048%26quot%3b)' fill='none'%3e%3crect width='2440' height='1000' x='0' y='0' fill='rgba(255%2c 255%2c 255%2c 1)'%3e%3c/rect%3e%3cpath d='M46 1000L1046 0L1713.5 0L713.5 1000z' fill='url(%23SvgjsLinearGradient1049)'%3e%3c/path%3e%3cpath d='M813.2 1000L1813.2 0L2014.2 0L1014.2 1000z' fill='url(%23SvgjsLinearGradient1049)'%3e%3c/path%3e%3cpath d='M2360 1000L1360 0L259 0L1259 1000z' fill='url(%23SvgjsLinearGradient1050)'%3e%3c/path%3e%3cpath d='M1496.8 1000L496.79999999999995 0L-274.20000000000005 0L725.8 1000z' fill='url(%23SvgjsLinearGradient1050)'%3e%3c/path%3e%3cpath d='M1868.121781474977 1000L2440 428.12178147497707L2440 1000z' fill='url(%23SvgjsLinearGradient1049)'%3e%3c/path%3e%3cpath d='M0 1000L571.8782185250229 1000L 0 428.12178147497707z' fill='url(%23SvgjsLinearGradient1050)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1048'%3e%3crect width='2440' height='1000' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='0%25' y1='100%25' x2='100%25' y2='0%25' id='SvgjsLinearGradient1049'%3e%3cstop stop-color='rgba(0%2c 0%2c 0%2c 0.01)' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='rgba(0%2c 0%2c 0%2c 0.01)' offset='0.66'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='100%25' y1='100%25' x2='0%25' y2='0%25' id='SvgjsLinearGradient1050'%3e%3cstop stop-color='rgba(0%2c 0%2c 0%2c 0.01)' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='rgba(0%2c 0%2c 0%2c 0.01)' offset='0.66'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
 }
 
+
+
 h1, h2, h3, h4, h5 {
     font-family: 'Rubik Beastly', cursive;
 }
@@ -27,4 +29,11 @@ label#main {
 span span#value {
     color: #0d6efd;
     font-weight: bold;
+}
+
+
+@media only screen and (max-width: 576px) {
+    #applyEffect {
+        margin-top: 7%;
+    }
 }
