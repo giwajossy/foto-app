@@ -12,6 +12,7 @@ const router = express.Router()
 const cloudinary = require("../utils/cloudinary")
 const upload = require("../utils/multer")
 const User = require("../models/user.model")
+const Effect = require("../models/effect.model")
 const { url } = require("../utils/cloudinary")
 
 
@@ -62,7 +63,7 @@ router.post("/", upload.single("image"), async (req, res) => {
 })
 
 var effects;
-router.get("/transformation/:imageId", (req, res) => {    
+router.get("/transformation/:imageId", async (req, res) => {    
 
     try {
 
@@ -70,16 +71,27 @@ router.get("/transformation/:imageId", (req, res) => {
         const identifier = req.query.identifier
         const url = req.query.url
 
-        if (identifier) {
+        if (identifier) {            
             
-            effects = req.query.effects.replace(/,/g, " ").split(" ")
-            
-            res.render("transformation", {
-                title: "Transformation",
-                defaultAvatar: url,
-                publicId: identifier,
-                appliedEffects: effects
+            // create instance of a userEffect
+            let userEffect = new Effect({
+                previewURL: url,
+                updated: Date.now()
             })
+
+            // save user to db
+            await userEffect.save((err) => {
+
+                effects = req.query.effects.replace(/,/g, " ").split(" ")            
+                res.render("transformation", {
+                    title: "Transformation",
+                    defaultAvatar: url,
+                    publicId: identifier,
+                    appliedEffects: effects
+                })
+
+            })
+
 
         } else {
 
