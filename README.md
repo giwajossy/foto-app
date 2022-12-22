@@ -2,7 +2,7 @@
 
 Foto App lets you apply a range of transformation effects to your picture, change format, fine-tune image quality, set corner radius, and rotation angle. And share to your favourite social media platform.
 
-[Live Preview](https://use-foto-app.herokuapp.com/)
+[Live Preview](https://foto-app.up.railway.app/)
 
 ---
 
